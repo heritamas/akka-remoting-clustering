@@ -5,6 +5,7 @@ import akka.util.Timeout
 import com.typesafe.config.ConfigFactory
 
 import scala.concurrent.duration._
+import scala.language.postfixOps
 import scala.util.{Failure, Success}
 
 object RemoteActors extends App {

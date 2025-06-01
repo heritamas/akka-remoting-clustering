@@ -2,9 +2,9 @@ name := "akka-remoting-clustering"
 
 version := "0.1"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.14"
 
-lazy val akkaVersion = "2.5.21"
+lazy val akkaVersion = "2.8.8"
 lazy val protobufVersion = "3.6.1"
 
 libraryDependencies ++= Seq(

@@ -10,6 +10,7 @@ import scala.concurrent.duration._
 import akka.pattern.pipe
 import com.typesafe.config.{Config, ConfigFactory}
 
+import scala.language.postfixOps
 import scala.util.Random
 
 object ClusteringExampleDomain {

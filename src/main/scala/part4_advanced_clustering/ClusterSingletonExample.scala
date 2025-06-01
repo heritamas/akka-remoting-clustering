@@ -1,12 +1,12 @@
 package part4_advanced_clustering
 
 import java.util.UUID
-
 import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, PoisonPill, Props}
 import akka.cluster.singleton.{ClusterSingletonManager, ClusterSingletonManagerSettings, ClusterSingletonProxy, ClusterSingletonProxySettings}
 import com.typesafe.config.ConfigFactory
 
 import scala.concurrent.duration._
+import scala.language.postfixOps
 import scala.util.Random
 
 /*

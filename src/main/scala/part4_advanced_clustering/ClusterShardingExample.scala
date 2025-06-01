@@ -1,7 +1,6 @@
 package part4_advanced_clustering
 
 import java.util.{Date, UUID}
-
 import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Props, ReceiveTimeout}
 import akka.cluster.sharding.ShardRegion.Passivate
 import akka.cluster.sharding.{ClusterSharding, ClusterShardingSettings, ShardRegion}
@@ -9,6 +8,7 @@ import com.typesafe.config.ConfigFactory
 
 import scala.util.Random
 import scala.concurrent.duration._
+import scala.language.postfixOps
 
 case class OysterCard(id: String, amount: Double)
 case class EntryAttempt(oysterCard: OysterCard, date: Date)
