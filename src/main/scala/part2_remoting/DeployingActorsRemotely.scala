@@ -11,6 +11,7 @@ object DeployingActorsRemotely_LocalApp extends App {
   val simpleActor = system.actorOf(Props[SimpleActor], "remoteActor") // /user/remoteActor
   simpleActor ! "hello, remote actor!"
 
+  // WARNING: this actor can't be deployed remotely, because it is deprecated in Akka > 2.6
   // actor path of a remotely deployed actor
   println(simpleActor)
   // expected: akka://RemoteActorSystem@localhost:2552/user/remoteActor
@@ -27,8 +28,8 @@ object DeployingActorsRemotely_LocalApp extends App {
   remotelyDeployedActor ! "hi, remotely deployed actor!"
 
   // routers with routees deployed remotely
-  val poolRouter = system.actorOf(FromConfig.props(Props[SimpleActor]), "myRouterWithRemoteChildren")
-  (1 to 10).map(i => s"message $i").foreach(poolRouter ! _)
+//  val poolRouter = system.actorOf(FromConfig.props(Props[SimpleActor]), "myRouterWithRemoteChildren")
+//  (1 to 10).map(i => s"message $i").foreach(poolRouter ! _)
 
   // watching remote actors
   class ParentActor extends Actor with ActorLogging {
@@ -42,8 +43,8 @@ object DeployingActorsRemotely_LocalApp extends App {
     }
   }
 
-  val parentActor = system.actorOf(Props[ParentActor], "watcher")
-  parentActor ! "create"
+//  val parentActor = system.actorOf(Props[ParentActor], "watcher")
+//  parentActor ! "create"
 //  Thread.sleep(1000)
 //  system.actorSelection("akka://RemoteActorSystem@localhost:2552/remote/akka/LocalActorSystem@localhost:2551/user/watcher/remoteChild") ! PoisonPill
 
