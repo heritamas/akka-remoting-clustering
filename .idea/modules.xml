@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/akka-remoting-clustering.iml" filepath="$PROJECT_DIR$/.idea/modules/akka-remoting-clustering.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/akka-remoting-clustering/akka-remoting-clustering.akka-remoting-clustering-build.iml" filepath="$PROJECT_DIR$/.idea/modules/akka-remoting-clustering/akka-remoting-clustering.akka-remoting-clustering-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/akka-remoting-clustering/akka-remoting-clustering.akka-remoting-clustering-build~1.iml" filepath="$PROJECT_DIR$/.idea/modules/akka-remoting-clustering/akka-remoting-clustering.akka-remoting-clustering-build~1.iml" />
     </modules>
   </component>
 </project>
