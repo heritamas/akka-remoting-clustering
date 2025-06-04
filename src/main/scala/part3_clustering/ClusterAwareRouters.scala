@@ -37,7 +37,8 @@ object RouteesApp extends App {
       .withFallback(ConfigFactory.load("part3_clustering/clusterAwareRouters.conf"))
 
     val system = ActorSystem("RTJVMCluster", config)
-    system.actorOf(Props[SimpleRoutee], "worker")
+    // for group router, you have to create routees in each node
+    //system.actorOf(Props[SimpleRoutee], "worker")
   }
 
   startRouteeNode(2551)
@@ -46,7 +47,7 @@ object RouteesApp extends App {
 
 object MasterWithRouterApp extends App {
   val mainConfig = ConfigFactory.load("part3_clustering/clusterAwareRouters.conf")
-  val config = mainConfig.getConfig("masterWithGroupRouterApp").withFallback(mainConfig)
+  val config = mainConfig.getConfig("masterWithRouterApp").withFallback(mainConfig)
 
   val system = ActorSystem("RTJVMCluster", config)
   val masterActor = system.actorOf(Props[MasterWithRouter], "master")
