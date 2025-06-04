@@ -85,7 +85,7 @@ object PaymentSystemClient extends App {
   val onlineShopCheckout = system.actorOf(OnlineShopCheckout.props(proxy))
 
   import system.dispatcher
-  system.scheduler.schedule(5 seconds, 1 second, () => {
+  system.scheduler.scheduleWithFixedDelay(5 seconds, 1 second)( () => {
     val randomOrder = Order(List(), Random.nextDouble() * 100)
     onlineShopCheckout ! randomOrder
   })
