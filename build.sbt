@@ -4,9 +4,9 @@ version := "0.1"
 
 scalaVersion := "2.13.14"
 
-lazy val akkaVersion = "2.6.20"
+lazy val akkaVersion = "2.7.0"
 lazy val protobufVersion = "3.6.1"
-lazy val aeronVersion = "1.47.5"
+lazy val aeronVersion = "1.30.0"
 
 javaOptions += "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
 
