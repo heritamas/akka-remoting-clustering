@@ -21,7 +21,7 @@ case class VoteRejected(reason: String)
 class VotingAggregator extends Actor with ActorLogging {
   val CANDIDATES: Set[String] = Set("Martin", "Roland", "Jonas", "Daniel")
 
-  context.setReceiveTimeout(20 seconds)
+  context.setReceiveTimeout(60 seconds)
 
   override def receive: Receive = online(Set(), Map())
 
